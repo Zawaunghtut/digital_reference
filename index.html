@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="မြန်မာရည်ညွှန်း - ဇော်အောင်ထွတ် (စာကြည့်တိုက်ပညာ) ၏ ဒီဂျစ်တယ်ဗားရှင်း">
+    <meta name="keywords" content="မြန်မာရည်ညွှန်း, စာကြည့်တိုက်ပညာ, ဇော်အောင်ထွတ်, ရည်ညွှန်းစာအုပ်, စွယ်စုံကျမ်း">
+    <meta name="author" content="ဇော်အောင်ထွတ် (စာကြည့်တိုက်ပညာ)">
+    <title>မြန်မာရည်ညွှန်း - ဇော်အောင်ထွတ် (စာကြည့်တိုက်ပညာ) - Digital Masterpiece</title>
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="မြန်မာရည်ညွှန်း - ဒီဂျစ်တယ်ဗားရှင်း">
+    <meta property="og:description" content="ဇော်အောင်ထွတ် (စာကြည့်တိုက်ပညာ) ၏ မြန်မာရည်ညွှန်း စာအုပ်၏ ဒီဂျစ်တယ်ဗားရှင်း">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://myanmareference.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pyidaungsu:wght@400;700&display=swap');
+        :root {
+            --primary: #1a2a6c;
+            --primary-dark: #0d1b4c;
+            --secondary: #b21f1f;
+            --secondary-dark: #8a1818;
+            --accent: #fdbb2d;
+            --accent-dark: #e0a326;
+            --bg: #f4f7f6;
+            --bg-alt: #e9ecef;
+            --white: #ffffff;
+            --text: #333333;
+            --text-light: #666666;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        /* Dark Mode Variables */
+        .dark-mode {
+            --primary: #4a6bff;
+            --primary-dark: #3a5ae8;
+            --secondary: #ff6b6b;
+            --secondary-dark: #e85a5a;
+            --accent: #ffd93d;
+            --accent-dark: #f5c72c;
+            --bg: #1a1a2e;
+            --bg-alt: #16213e;
+            --white: #0f3460;
+            --text: #e6e6e6;
+            --text-light: #b3b3b3;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Pyidaungsu', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            transition: var(--transition);
+            line-height: 1.7;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            width: 320px;
+            background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 0 15px var(--shadow);
+            z-index: 100;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .sidebar-header {
+            padding: 25px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+        
+        .sidebar-header h2 {
+            color: white;
+            border: none;
+            padding: 0;
+            margin: 0 0 8px 0;
+            font-size: 1.5rem;
+        }
+        
+        .sidebar-subtitle {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        /* Control Buttons */
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        .control-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            color: white;
+        }
+        
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+        
+        .menu {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px 0;
+        }
+        
+        .menu-item {
+            padding: 16px 25px;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            padding-left: 30px;
+        }
+        
+        .menu-item.active {
+            background: linear-gradient(90deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            border-left: 6px solid var(--accent);
+        }
+        
+        .menu-item-icon {
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+        
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            overflow-y: auto;
+            background: var(--white);
+            padding: 40px;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            display: none;
+            animation: fadeIn 0.5s ease;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+            position: relative;
+        }
+        
+        h1:after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        h2 {
+            color: var(--secondary);
+            margin-top: 35px;
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+            font-size: 1.5rem;
+        }
+        
+        h3 {
+            color: var(--primary);
+            margin-top: 25px;
+            font-size: 1.2rem;
+        }
+        
+        p {
+            margin-bottom: 18px;
+        }
+        
+        ul, ol {
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* Search Box */
+        .search-box {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            font-size: 1rem;
+            margin-bottom: 25px;
+            box-sizing: border-box;
+            background: var(--white);
+            color: var(--text);
+            transition: var(--transition);
+            font-family: 'Pyidaungsu', sans-serif;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(253, 187, 45, 0.2);
+        }
+        
+        /* Table Styles */
+        .table-container {
+            overflow-x: auto;
+            margin: 25px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+        
+        th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 18px 20px;
+            text-align: left;
+            position: sticky;
+            top: 0;
+            font-weight: 700;
+            border: none;
+        }
+        
+        td {
+            padding: 15px 20px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        
+        tr:nth-child(even) {
+            background: var(--bg-alt);
+        }
+        
+        tr:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px var(--shadow);
+        }
+        
+        /* Highlight */
+        .highlight {
+            background: linear-gradient(120deg, rgba(253, 187, 45, 0.2) 0%, rgba(253, 187, 45, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        /* Quote Box */
+        .quote-box {
+            background: var(--bg);
+            border-left: 5px solid var(--accent);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .quote-box:before {
+            content: "❝";
+            font-size: 3rem;
+            color: var(--accent);
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            opacity: 0.3;
+        }
+        
+        /* Toolbar */
+        .toolbar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .toolbar-btn {
+            background: var(--bg-alt);
+            border: none;
+            border-radius: 8px;
+            padding: 10px 18px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Pyidaungsu', sans-serif;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+        
+        .toolbar-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 320px;
+            right: 0;
+            height: 4px;
+            background: var(--bg-alt);
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            body {
+                flex-direction: column;
+                height: auto;
+                overflow-y: auto;
+            }
+            
+            .sidebar {
+                width: 100%;
+                height: auto;
+                max-height: 70vh;
+            }
+            
+            .main-content {
+                padding: 25px;
+            }
+            
+            .progress-container {
+                left: 0;
+            }
+            
+            .toolbar {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .main-content {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+            
+            .sidebar-header {
+                padding: 20px 15px;
+            }
+            
+            .menu-item {
+                padding: 14px 20px;
+            }
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--bg-alt);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Print Styles */
+        @media print {
+            .sidebar, .toolbar, .progress-container {
+                display: none;
+            }
+            
+            body {
+                display: block;
+                height: auto;
+                overflow: visible;
+            }
+            
+            .main-content {
+                padding: 0;
+                overflow: visible;
+            }
+            
+            .page {
+                display: block !important;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="sidebar-header">
+        <h2>မြန်မာရည်ညွှန်း</h2>
+        <p class="sidebar-subtitle">ပြုစုသူ - ဇော်အောင်ထွတ် (စာကြည့်တိုက်ပညာ)</p>
+        <p class="sidebar-subtitle">ဒီဂျစ်တယ်ဗားရှင်း</p>
+        
+        <div class="controls">
+            <button class="control-btn" id="darkModeToggle" title="အမှောင်/အလင်း ပြောင်းရန်">
+                🌙
+            </button>
+            <button class="control-btn" id="fontIncrease" title="စာလုံးအရွယ်အစား ကြီးရန်">
+                A+
+            </button>
+            <button class="control-btn" id="fontDecrease" title="စာလုံးအရွယ်အစား ငယ်ရန်">
+                A-
+            </button>
+            <button class="control-btn" id="printBtn" title="ပုံနှိပ်ရန်">
+                🖨️
+            </button>
+        </div>
+    </div>
+    
+    <div class="menu">
+        <div class="menu-item active" onclick="showPage('intro')">
+            <span class="menu-item-icon">📖</span>
+            နိဒါန်းနှင့် ရည်စူးလွှာ
+        </div>
+        <div class="menu-item" onclick="showPage('part1')">
+            <span class="menu-item-icon">📚</span>
+            အပိုင်း (၁) ရည်ညွှန်းစာအုပ် အခြေခံ
+        </div>
+        <div class="menu-item" onclick="showPage('part2')">
+            <span class="menu-item-icon">📑</span>
+            အပိုင်း (၂) ရည်ညွှန်းစာအုပ် အမျိုးမျိုး
+        </div>
+        <div class="menu-item" onclick="showPage('part3')">
+            <span class="menu-item-icon">🏛️</span>
+            အပိုင်း (၃) ဝန်ဆောင်မှုနှင့် ရှေးဟောင်းကျမ်း
+        </div>
+        <div class="menu-item" onclick="showPage('thesis')">
+            <span class="menu-item-icon">🔍</span>
+            ဘွဲ့လွန်စာတမ်းများ (Interactive)
+        </div>
+        <div class="menu-item" onclick="showPage('author')">
+            <span class="menu-item-icon">✍️</span>
+            စာရေးသူ၏ ကိုယ်ရေးမှတ်တမ်း
+        </div>
+        <div class="menu-item" onclick="showPage('about')">
+            <span class="menu-item-icon">ℹ️</span>
+            ဒီဂျစ်တယ်ဗားရှင်းအကြောင်း
+        </div>
+    </div>
+</div>
+
+<div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<div class="main-content">
+    <div class="toolbar">
+        <button class="toolbar-btn" onclick="scrollToTop()">
+            <span>⬆️</span> ထိပ်ဆုံးသို့
+        </button>
+        <button class="toolbar-btn" onclick="toggleFullScreen()">
+            <span>📺</span> ဖန်သားပြင် အပြည့်
+        </button>
+        <button class="toolbar-btn" onclick="shareContent()">
+            <span>📤</span> မျှဝေရန်
+        </button>
+        <button class="toolbar-btn" onclick="speakCurrentPage()">
+            <span>🔊</span> အသံဖတ်ရန်
+        </button>
+    </div>
+
+    <div id="intro" class="page active">
+        <h1>နိဒါန်းနှင့် ရည်စူးလွှာ</h1>
+        
+        <div class="quote-box">
+            ဤစာအုပ်စာတမ်းသည် မြန်မာ့စာကြည့်တိုက်ပညာရပ်၏ ရတနာသိုက်ကြီးဖြစ်ပါသည်။
+        </div>
+        
+        <p>၁၉၇၁ ခုနှစ်မှစတင်ခဲ့သော ရန်ကုန်တက္ကသိုလ် စာကြည့်တိုက်နှင့် သုတပညာဌာန၏ ခရီးစဉ်အတွင်း ပညာရပ်ဆိုင်ရာ စာအုပ်စာတမ်းများ လိုအပ်ချက်ကို ဖြည့်ဆည်းရန် ဤ "မြန်မာရည်ညွှန်း" စာအုပ်ကို ပြုစုရခြင်း ဖြစ်ပါသည်။</p>
+        
+        <h2>ရည်စူးလွှာ</h2>
+        <p>စာပေရေးသားခြင်းအမွေကို မြေတောင်မြှောက်ပေးခဲ့သော ဖခင် ပါမောက္ခ ဦးသန်းထွတ် (အငြိမ်းစား၊ ပညာရေးတက္ကသိုလ်) နှင့် မိခင် ဒေါ်ညွန့်ညွန့် တို့အား ဤကျမ်းငယ်ဖြင့် ဂါရဝပြုပါသည်။</p>
+        
+        <h2>ဤဒီဂျစ်တယ်ဗားရှင်း၏ ရည်ရွယ်ချက်</h2>
+        <p>မူရင်းစာအုပ်ကို ဒီဂျစ်တယ်ခေတ်နှင့် လိုက်လျောညီထွေဖြစ်စေရန်၊ နည်းပညာအသစ်များဖြင့် ချဲ့ထွင်ပြုစုထားပါသည်။ ဤဒီဂျစ်တယ်ဗားရှင်းသည်:</p>
+        <ul>
+            <li>စာအုပ်စာတမ်းများကို လွယ်ကူစွာ ရှာဖွေနိုင်စေရန်</li>
+            <li>ဖတ်ရှုသူများ သက်တောင့်သက်သာဖတ်ရှုနိုင်စေရန်</li>
+            <li>မျိုးဆက်သစ်များအတွက် မပျက်မကွက် လက်ဆင့်ကမ်းနိုင်စေရန်</li>
+            <li>မြန်မာ့စာကြည့်တိုက်ပညာရပ်ကို ကမ္ဘာနှင့် ချိတ်ဆက်နိုင်စေရန်</li>
+        </ul>
+    </div>
+
+    <div id="part1" class="page">
+        <h1>အပိုင်း (၁) ရည်ညွှန်းစာအုပ် အခြေခံ</h1>
+        
+        <h2>ရည်ညွှန်းလုပ်ငန်း (Reference Work)</h2>
+        <p>ရည်ညွှန်းလုပ်ငန်းဆိုသည်မှာ အသုံးပြုသူ (Patron) ၏ မေးခွန်းကို စာကြည့်တိုက်မှူးက နားလည်အောင် ကြိုးစားပြီး သင့်တော်သော <span class="highlight">Reference Tool</span> များဖြင့် အဖြေရှာပေးသည့် ဆက်သွယ်ရေး လုပ်ငန်းစဉ် ဖြစ်ပါသည်။</p>
+        
+        <h2>ရည်ညွှန်းစာအုပ်၏ ကြန်အင်လက္ခဏာများ</h2>
+        <ul>
+            <li>တစ်အုပ်လုံး ဆက်တိုက်ဖတ်ရန် မဟုတ်ဘဲ သိလိုသည့် ဗဟုသုတကို ရှာဖွေရန် ဖြစ်သည်။</li>
+            <li>အက္ခရာစဉ်၊ သက္ကရာဇ်စဉ် သို့မဟုတ် ပညာရပ်အလိုက် စနစ်တကျ စီစဉ်ထားလေ့ရှိသည်။</li>
+            <li>မကြာခဏ ပြန်လည်တည်းဖြတ်ပြီး အယ်ဒီတာအသစ်များ ထုတ်ဝေလေ့ရှိသည်။</li>
+        </ul>
+        
+        <h2>အဘိဓာန် (Dictionaries)</h2>
+        <p>ရှေးအကျဆုံး ရည်ညွှန်းစာအုပ် အမျိုးအစား ဖြစ်ပြီး၊ မြန်မာစာပေ သမိုင်းတွင် ပထမဆုံး အက္ခရာစဉ်ခြင်းကို ၁၈၂၆ ခုနှစ်ထုတ် ဆရာယုဒသန်၏ အဘိဓာန်တွင် စတင်တွေ့ရှိရပါသည်။</p>
+        
+        <div class="quote-box">
+            အဘိဓာန်သည် ဘာသာစကား၏ သိုက်မှော်ဖြစ်သည်။
+        </div>
+    </div>
+
+    <div id="part2" class="page">
+        <h1>အပိုင်း (၂) ရည်ညွှန်းစာအုပ် အမျိုးမျိုး</h1>
+        
+        <h2>၁။ စွယ်စုံကျမ်း (Encyclopaedias)</h2>
+        <p>လူသားတို့၏ အသိဉာဏ်ပညာ ပေါင်းစုံကို စုစည်းထားခြင်း ဖြစ်သည်။ မြန်မာ့စွယ်စုံကျမ်းကို ၁၉၅၄ ခုနှစ်တွင် အတွဲ (၁) ကို စတင်ထုတ်ဝေခဲ့ပါသည်။</p>
+        
+        <h2>၂။ လမ်းညွှန် (Directories)</h2>
+        <p>ပုဂ္ဂိုလ်၊ အသင်းအဖွဲ့ သို့မဟုတ် စီးပွားရေး လုပ်ငန်းများ၏ အမည်နှင့် လိပ်စာများကို ရှာဖွေနိုင်ပါသည်။</p>
+        
+        <h2>၃။ စာစုစာရင်း (Bibliographies)</h2>
+        <p>စာအုပ်စာတမ်းများ၏ စာရင်းကို စနစ်တကျ ပြုစုထားခြင်း ဖြစ်ပြီး၊ သုတေသီများအတွက် မရှိမဖြစ် လိုအပ်ပါသည်။</p>
+        
+        <h2>၄။ မြေပုံနှင့် အက်တလက် (Maps & Atlases)</h2>
+        <p>ပထဝီဝင်ဆိုင်ရာ အချက်အလက်များကို ရှာဖွေရန် အသုံးပြုပါသည်။</p>
+        
+        <h2>၅။ အတ္ထုပ္ပတ္တိ (Biographies)</h2>
+        <p>ထင်ရှားသောပုဂ္ဂိုလ်များ၏ ဘဝအကြောင်းကို ဖော်ပြထားပါသည်။</p>
+    </div>
+
+    <div id="part3" class="page">
+        <h1>အပိုင်း (၃) ဝန်ဆောင်မှုနှင့် ရှေးဟောင်းကျမ်းများ</h1>
+        
+        <h2>အကြောင်းအချက် ရှာဖွေပေးခြင်း</h2>
+        <ul>
+            <li><strong>ရေတိုရှာဖွေခြင်း:</strong> အသင့်သုံး ရည်ညွှန်းစာအုပ်များ (Ready Reference) ကို သုံး၍ ချက်ချင်း ရှာဖွေပေးခြင်း။</li>
+            <li><strong>ရေရှည်ရှာဖွေခြင်း:</strong> သုတေသန လုပ်ငန်းများအတွက် အညွှန်းနှင့် စာစုစာရင်းများ သုံး၍ ရှာဖွေပေးခြင်း။</li>
+        </ul>
+        
+        <h2>ကုန်းဘောင်ခေတ် မြန်မာ့စွယ်စုံကျမ်းများ</h2>
+        <p>ကုန်းဘောင်ခေတ်တွင် စွယ်စုံကျမ်း သဘောသက်ဝင်သည့် အမေးအဖြေကျမ်းများစွာ ပေါ်ထွန်းခဲ့ပါသည်။</p>
+        
+        <ul>
+            <li>လက်ဝဲနော်ရထာလျှောက်ထုံး (၁၇၆၃)</li>
+            <li>အမေးတော်ဖြေကျမ်း (၁၈၀၆)</li>
+            <li>သမန္တစက္ခုဒီပနီ (၁၈၁၁)</li>
+            <li>စွယ်စုံကျော်ထင်ကျမ်း (၁၇၉၆)</li>
+        </ul>
+        
+        <h2>မြန်မာ့ရည်ညွှန်းစာအုပ်၏ အနာဂတ်</h2>
+        <p>ဒီဂျစ်တယ်ခေတ်တွင် ရည်ညွှန်းစာအုပ်များသည် အင်တာနက်ပေါ်တွင် အခမဲ့ဖတ်ရှုနိုင်သည့် ဒီဂျစ်တယ်စာအုပ်များအဖြစ် ပြောင်းလဲလာပါသည်။ ဤပြောင်းလဲမှုသည် ဗဟုသုတရှာဖွေသူများအတွက် အခွင့်အလမ်းသစ်များ ဖန်တီးပေးနေပါသည်။</p>
+    </div>
+
+    <div id="thesis" class="page">
+        <h1>ဘွဲ့လွန်စာတမ်းများ Interactive Table</h1>
+        <p>၁၉၇၁ မှ ၂၀၀၄ ခုနှစ်အထိ တင်သွင်းခဲ့သော စာတမ်းပေါင်း ၅၀၀ နီးပါးကို ဤနေရာတွင် ရှာဖွေနိုင်ပါသည်။</p>
+        
+        <input type="text" id="searchThesis" class="search-box" placeholder="ကျောင်းသားအမည် သို့မဟုတ် စာတမ်းခေါင်းစဉ်ဖြင့် ရှာဖွေရန်..." onkeyup="filterTable()">
+        
+        <div class="table-container">
+            <table id="thesisTable">
+                <thead>
+                    <tr>
+                        <th>စဉ်</th>
+                        <th>ကျောင်းသားအမည်</th>
+                        <th>စာတမ်းခေါင်းစဉ်</th>
+                        <th>ခုနှစ်</th>
+                        <th>အမျိုးအစား</th>
+                    </tr>
+                </thead>
+                <tbody id="thesisBody">
+                    <!-- Thesis data will be loaded here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: var(--bg-alt); border-radius: 10px;">
+            <h3>စာတမ်းအချက်အလက်</h3>
+            <p>စုစုပေါင်းစာတမ်း: <span id="totalThesis">0</span> စောင်</p>
+            <p>ရှာဖွေတွေ့ရှိမှု: <span id="foundThesis">0</span> စောင်</p>
+        </div>
+    </div>
+
+    <div id="author" class="page">
+        <h1>စာရေးသူ၏ ကိုယ်ရေးမှတ်တမ်း</h1>
+        
+        <div style="display: flex; align-items: center; margin-bottom: 30px; padding: 20px; background: var(--bg-alt); border-radius: 10px;">
+            <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 25px; color: white; font-size: 2.5rem;">
+                ဇ
+            </div>
+            <div>
+                <h2 style="margin-top: 0;">ဦးဇော်အောင်ထွတ် (ခ) ဇော်အောင်ထွတ်</h2>
+                <p><strong>စာကြည့်တိုက်ပညာရှင်၊ စာရေးဆရာ၊ ပညာရှင်</strong></p>
+            </div>
+        </div>
+        
+        <h2>ပညာရေး</h2>
+        <ul>
+            <li>ရန်ကုန်တက္ကသိုလ်၊ စာကြည့်တိုက်ပညာဌာန (မဟာဝိဇ္ဇာ)</li>
+            <li>ရန်ကုန်တက္ကသိုလ်၊ စာကြည့်တိုက်နှင့် သုတပညာဌာန (M.Lib.Sc)</li>
+            <li>PGDL (Online Law)၊ အဝေးသင်တက္ကသိုလ်</li>
+        </ul>
+        
+        <h2>အလုပ်အကိုင်</h2>
+        <p>ရန်ကုန်တက္ကသိုလ်၊ စာကြည့်တိုက်နှင့် သုတပညာဌာနတွင် ဆရာအဖြစ် တာဝန်ထမ်းဆောင်ခဲ့ပြီး၊ ပခုက္ကူဦးအုန်းဖေ စာပေဆု (၁၉၉၇) နှင့် ဝိဇ္ဇာသိပ္ပံပညာရှင်အဖွဲ့၏ အကောင်းဆုံး စာတမ်းဆု (၂၀၁၅) တို့ကို ရရှိခဲ့သူ ဖြစ်ပါသည်။</p>
+        
+        <h2>ထင်ရှားသော လက်ရာများ</h2>
+        <ul>
+            <li>မြန်မာရည်ညွှန်း (၂၀၀၅)</li>
+            <li>မြန်မာနိုင်ငံပိဋကတ်တိုက်စာကြည့်တိုက်သမိုင်း (၂၀၀၁)</li>
+            <li>ဒီဂျစ်တယ်စာကြည့်တိုက်လမ်းညွှန်များ (၂၀၂၅-၂၀၂၆)</li>
+        </ul>
+    </div>
+
+    <div id="about" class="page">
+        <h1>ဒီဂျစ်တယ်ဗားရှင်းအကြောင်း</h1>
+        
+        <h2>ပြုပြင်မွမ်းမံမှုများ</h2>
+        <p>မူရင်းစာအုပ်ကို ဒီဂျစ်တယ်ခေတ်နှင့် လိုက်လျောညီထွေဖြစ်စေရန် အောက်ပါတိုးတက်မှုများ ပြုလုပ်ထားပါသည်:</p>
+        
+        <ul>
+            <li><strong>အပြည့်အစုံသော ရှာဖွေမှုစနစ်:</strong> စာတမ်းများအား အမည်၊ ခေါင်းစဉ်၊ ခုနှစ်ဖြင့် ရှာဖွေနိုင်ခြင်း</li>
+            <li><strong>အမှောင်နှင့် အလင်း မုဒ်များ:</strong> ညအချိန် ဖတ်ရှုရန်အတွက် အမှောင်မုဒ်</li>
+            <li><strong>စာလုံးအရွယ်အစား ညှိခြင်း:</strong> ဖတ်ရှုသူ၏ လိုအပ်ချက်အလိုက် စာလုံးအရွယ်အစား ပြောင်းလဲနိုင်ခြင်း</li>
+            <li><strong>အသံဖတ်စနစ်:</strong> စာသားများအား အသံထွက်ဖတ်ပေးနိုင်ခြင်း</li>
+            <li><strong>မျှဝေခြင်းစနစ်:</strong> ဆောင်းပါးများအား လွယ်ကူစွာ မျှဝေနိုင်ခြင်း</li>
+            <li><strong>ဖန်သားပြင်အပြည့် မုဒ်:</strong> အာရုံစိုက်ဖတ်ရှုနိုင်ရန် ဖန်သားပြင်အပြည့် မုဒ်</li>
+        </ul>
+        
+        <h2>ပံ့ပိုးကူညီသူများ</h2>
+        <p>ဤဒီဂျစ်တယ်ဗားရှင်းကို ပြုစုရာတွင် အောက်ပါပုဂ္ဂိုလ်များ၏ အကြံဉာဏ်များ ကျေးဇူးပြု၍ ရယူခဲ့ပါသည်:</p>
+        
+        <ul>
+            <li>ဒေါက်တာဇော် (စာကြည့်တိုက်ပညာ)</li>
+            <li>ဆရာထွတ် (ဒီဂျစ်တယ်နည်းပညာ)</li>
+            <li>ဦးအောင် (စာပေပညာရှင်)</li>
+        </ul>
+        
+        <div class="quote-box">
+            ဤဒီဂျစ်တယ်ဗားရှင်းသည် မူရင်းစာအုပ်၏ ဝိညာဉ်ကို မပျက်စေဘဲ၊ ခေတ်သစ်နည်းပညာဖြင့် အသက်သွင်းထားပါသည်။
+        </div>
+        
+        <div class="footer">
+            <p>မြန်မာရည်ညွှန်း - ဒီဂျစ်တယ်ဗားရှင်း © ၂၀၂၅</p>
+            <p>ဤဒီဂျစ်တယ်ဗားရှင်းကို ပညာရပ်ဆိုင်ရာ လေ့လာမှုအတွက် အခမဲ့အသုံးပြုနိုင်ပါသည်။</p>
+            <p>တိုးတက်မှုများအတွက် အကြံပြုလိုပါက zahdlis@gmail.com သို့ ဆက်သွယ်နိုင်ပါသည်။</p>
+	    <p>©2026 Zaw Aung Htut. All rights reserved.</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // Thesis data
+    const thesisData = [
+        { id: 1, name: "Mg Mg Oo", title: "ဒဂုန်တာရာစာစုစာရင်း", year: "1971-73", type: "စာစုစာရင်း" },
+        { id: 2, name: "Soe Nyein", title: "မင်းသုဝဏ်စာစုစာရင်း", year: "1971-73", type: "စာစုစာရင်း" },
+        { id: 3, name: "Aung Kyaw", title: "မြန်မာ့ပုံနှိပ်စာအုပ်သမိုင်း", year: "1972-74", type: "သမိုင်း" },
+        { id: 4, name: "Nu Nu Yin", title: "စာကြည့်တိုက်ပညာသင်ရိုးညွှန်းတမ်း", year: "1973-75", type: "သင်ရိုး" },
+        { id: 5, name: "Kyaw Swar", title: "မြန်မာနိုင်ငံရှိ တက္ကသိုလ်စာကြည့်တိုက်များ", year: "1974-76", type: "လေ့လာချက်" },
+        { id: 6, name: "Hla Hla", title: "စာအုပ်အခန်းကဏ္ဍဖွံ့ဖြိုးရေး", year: "1975-77", type: "ဖွံ့ဖြိုးရေး" },
+        { id: 7, name: "Zaw Min", title: "ဒစ်ဂျစ်တယ်စာကြည့်တိုက်များ၏အခန်းကဏ္ဍ", year: "1990-92", type: "နည်းပညာ" },
+        { id: 8, name: "Thida Win", title: "မြန်မာ့ရှေးဟောင်းကျမ်းစာများ", year: "1991-93", type: "ရှေးဟောင်း" },
+        { id: 9, name: "Myo Min", title: "ပိဋကတ်တိုက်စာကြည့်တိုက်များ", year: "1992-94", type: "ဘာသာရေး" },
+        { id: 10, name: "Aye Kyu", title: "ဗြိတိသျှခေတ် မြန်မာစာကြည့်တိုက်များအခြေအနေ", year: "1971-73", type: "သမိုင်း" },
+        { id: 255, name: "Mg Zaw Aung Htut", title: "မြန်မာနိုင်ငံပိဋကတ်တိုက်စာကြည့်တိုက် အမျိုးအစားများနှင့် သဘောသဘာဝများ", year: "1993-95", type: "ဘာသာရေး" }
+    ];
+
+    // DOM elements
+    const progressBar = document.getElementById('progressBar');
+    const thesisBody = document.getElementById('thesisBody');
+    const totalThesis = document.getElementById('totalThesis');
+    const foundThesis = document.getElementById('foundThesis');
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const fontIncrease = document.getElementById('fontIncrease');
+    const fontDecrease = document.getElementById('fontDecrease');
+    const printBtn = document.getElementById('printBtn');
+    
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+        // Load thesis data
+        loadThesisData();
+        
+        // Set initial total count
+        totalThesis.textContent = thesisData.length;
+        foundThesis.textContent = thesisData.length;
+        
+        // Set up dark mode
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '☀️';
+        }
+        
+        // Set up font size
+        const savedFontSize = localStorage.getItem('fontSize');
+        if (savedFontSize) {
+            document.body.style.fontSize = savedFontSize;
+        }
+        
+        // Set up progress bar
+        window.addEventListener('scroll', updateProgressBar);
+        updateProgressBar();
+        
+        // Set up current year in footer
+        document.getElementById('contactEmail').textContent = 
+            `contact${new Date().getFullYear()}@myanmareference.digital`;
+    });
+    
+    // Load thesis data into table
+    function loadThesisData() {
+        thesisBody.innerHTML = '';
+        thesisData.forEach(thesis => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${thesis.id}</td>
+                <td>${thesis.name}</td>
+                <td>${thesis.title}</td>
+                <td>${thesis.year}</td>
+                <td><span class="highlight">${thesis.type}</span></td>
+            `;
+            thesisBody.appendChild(row);
+        });
+    }
+    
+    // Filter table based on search input
+    function filterTable() {
+        const input = document.getElementById("searchThesis");
+        const filter = input.value.toUpperCase();
+        const tr = thesisBody.getElementsByTagName("tr");
+        let foundCount = 0;
+        
+        for (let i = 0; i < tr.length; i++) {
+            const tds = tr[i].getElementsByTagName("td");
+            let found = false;
+            
+            for (let j = 0; j < tds.length; j++) {
+                if (tds[j].textContent.toUpperCase().indexOf(filter) > -1) {
+                    found = true;
+                    break;
+                }
+            }
+            
+            if (found) {
+                tr[i].style.display = "";
+                foundCount++;
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+        
+        foundThesis.textContent = foundCount;
+    }
+    
+    // Show selected page
+    function showPage(id) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        document.querySelectorAll('.menu-item').forEach(m => m.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+        document.querySelector('.main-content').scrollTop = 0;
+        updateProgressBar();
+    }
+    
+    // Update scroll progress bar
+    function updateProgressBar() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressBar.style.width = scrolled + "%";
+    }
+    
+    // Scroll to top
+    function scrollToTop() {
+        document.querySelector('.main-content').scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+    
+    // Toggle dark mode
+    darkModeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+            this.innerHTML = '☀️';
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+            this.innerHTML = '🌙';
+        }
+    });
+    
+    // Increase font size
+    fontIncrease.addEventListener('click', function() {
+        const currentSize = parseFloat(getComputedStyle(document.body).fontSize);
+        const newSize = currentSize + 1;
+        document.body.style.fontSize = newSize + 'px';
+        localStorage.setItem('fontSize', newSize + 'px');
+    });
+    
+    // Decrease font size
+    fontDecrease.addEventListener('click', function() {
+        const currentSize = parseFloat(getComputedStyle(document.body).fontSize);
+        const newSize = Math.max(currentSize - 1, 14);
+        document.body.style.fontSize = newSize + 'px';
+        localStorage.setItem('fontSize', newSize + 'px');
+    });
+    
+    // Print functionality
+    printBtn.addEventListener('click', function() {
+        window.print();
+    });
+    
+    // Toggle full screen
+    function toggleFullScreen() {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(err => {
+                console.log(`Error attempting to enable fullscreen: ${err.message}`);
+            });
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+        }
+    }
+    
+    // Share content
+    function shareContent() {
+        const currentPage = document.querySelector('.page.active');
+        const pageTitle = currentPage.querySelector('h1').textContent;
+        
+        if (navigator.share) {
+            navigator.share({
+                title: `မြန်မာရည်ညွှန်း - ${pageTitle}`,
+                text: `မြန်မာရည်ညွှန်း စာအုပ်မှ ${pageTitle} ကို ဖတ်ရှုပါ။`,
+                url: window.location.href,
+            })
+            .catch(console.error);
+        } else {
+            // Fallback for browsers that don't support Web Share API
+            alert('ဤဘရောက်ဇာသည် မျှဝေခြင်းလုပ်ဆောင်ချက်ကို မပံ့ပိုးပါ။ လင့်ကို ကူးယူ၍ မျှဝေပါ။');
+        }
+    }
+    
+    // Text-to-speech functionality
+    function speakCurrentPage() {
+        const currentPage = document.querySelector('.page.active');
+        const text = currentPage.innerText;
+        
+        if ('speechSynthesis' in window) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'my'; // Burmese language code
+            
+            // Try to find a Burmese voice
+            const voices = speechSynthesis.getVoices();
+            const burmeseVoice = voices.find(voice => voice.lang === 'my' || voice.lang === 'my-MM');
+            
+            if (burmeseVoice) {
+                utterance.voice = burmeseVoice;
+            }
+            
+            speechSynthesis.speak(utterance);
+        } else {
+            alert('ဤဘရောက်ဇာသည် အသံထွက်စနစ်ကို မပံ့ပိုးပါ။');
+        }
+    }
+    
+    // Keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+        // Ctrl + D for dark mode
+        if (e.ctrlKey && e.key === 'd') {
+            e.preventDefault();
+            darkModeToggle.click();
+        }
+        
+        // Ctrl + + for font increase
+        if (e.ctrlKey && (e.key === '+' || e.key === '=')) {
+            e.preventDefault();
+            fontIncrease.click();
+        }
+        
+        // Ctrl + - for font decrease
+        if (e.ctrlKey && e.key === '-') {
+            e.preventDefault();
+            fontDecrease.click();
+        }
+        
+        // Ctrl + F for search focus
+        if (e.ctrlKey && e.key === 'f') {
+            e.preventDefault();
+            const searchBox = document.getElementById('searchThesis');
+            if (searchBox) {
+                searchBox.focus();
+            }
+        }
+        
+        // Escape key to exit full screen
+        if (e.key === 'Escape' && document.fullscreenElement) {
+            toggleFullScreen();
+        }
+    });
+    
+    // Add animation to menu items on hover
+    document.querySelectorAll('.menu-item').forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(5px)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0)';
+        });
+    });
+    
+    // Add animation to table rows
+    document.querySelectorAll('tr').forEach(row => {
+        row.addEventListener('mouseenter', function() {
+            this.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+        });
+    });
+</script>
+</body>
+</html>
